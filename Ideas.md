@@ -6,3 +6,5 @@ Just a bunch of ideas/links to come back to:
 - https://developers.google.com/calendar/v3/reference/events/insert
 - https://developers.google.com/calendar/auth
 - https://bootstrap-vue.js.org/docs/
+- https://www.npmjs.com/package/@types/gapi
+- https://github.com/google/google-api-javascript-client
