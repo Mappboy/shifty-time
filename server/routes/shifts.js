@@ -1,0 +1,28 @@
+/*
+* Using couch db to install 
+echo "deb https://apache.bintray.com/couchdb-deb {distribution} main" \
+    | sudo tee -a /etc/apt/sources.list
+    yarn add nano
+*/
+const { Router } = require('express')
+
+const router = Router()
+const nano = require('nano')('http://localhost:5984')
+nano.db.create('shifts')
+const shifts = nano.db.use('shifts')
+
+router.get('/shifts', function(req, res) {
+  res.json({ id: 'i5h7sd' })
+})
+
+router.post('/shifts/:shift_id', function(req, res) {
+  shifts.insert({ ...req.params, ...req.body }, null, function(err, body) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.json(body)
+    }
+  })
+})
+
+module.exports = router
