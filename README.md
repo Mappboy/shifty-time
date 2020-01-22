@@ -1,6 +1,6 @@
 # shifty-time
 
-> Get free busy for shifty people
+> Shifty Quick Free Busy compare application using Google's FreeBusy
 
 ## Build Setup
 
@@ -19,4 +19,3 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
