@@ -3,7 +3,7 @@ import { Email } from '~/types/email';
 import { User } from '~/types/user';
 
 export interface RootState {
-  shift: Shift | null;
-  user: User | null;
+  shift: Shift;
+  user: User;
   attendees: Email[];
 }

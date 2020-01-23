@@ -1389,6 +1389,14 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/bootstrap@^4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-4.3.1.tgz#15fa89a4d275b114a4eceb90909d4eb8b90d43f5"
+  integrity sha512-n7Zv7Y+C98Yv4oqbyqGn3alCvNRCya2xMYzOdVEnmnFlu04MXQk1ntVrBhXzDkiwhZZYNkNfBZn2yhTnEh/mHQ==
+  dependencies:
+    "@types/jquery" "*"
+    popper.js "^1.14.1"
+
 "@types/browserslist@*":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@types/browserslist/-/browserslist-4.4.0.tgz#e2a5f7f8c7e97afb39f50812a77e5230d3ca2353"
@@ -1490,6 +1498,13 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
+"@types/jquery@*":
+  version "3.3.31"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.31.tgz#27c706e4bf488474e1cb54a71d8303f37c93451b"
+  integrity sha512-Lz4BAJihoFw5nRzKvg4nawXPzutkv7wmfQ5121avptaSIXlDNJCUuxZxX/G+9EVidZGuO0UBlk+YjKbwRKJigg==
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/json-schema@^7.0.3":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
@@ -1588,6 +1603,11 @@
   dependencies:
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
 "@types/source-list-map@*":
   version "0.1.2"
@@ -8419,6 +8439,11 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
   integrity sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
+
+popper.js@^1.14.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
 
 popper.js@^1.16.0:
   version "1.16.0"

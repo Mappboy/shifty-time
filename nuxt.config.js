@@ -64,7 +64,10 @@ module.exports = {
      ** You can extend webpack config here
      */
     babel: {
-      plugins: ['transform-decorators-legacy', 'transform-class-properties'],
+      plugins: [
+        ['@babel/plugin-proposal-decorators', { legacy: true }],
+        ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ],
     },
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     extend(config, ctx) {},
