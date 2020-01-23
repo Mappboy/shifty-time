@@ -10,17 +10,13 @@
 </template>
 
 <script lang="ts">
-import { Getter } from 'vuex-class';
 import { Component, Vue } from 'nuxt-property-decorator';
-import { Email } from '~/types/email';
+import { getters } from '~/store';
 
 @Component({})
 export default class EmailInput extends Vue {
-  @Getter('getFirstAttendee') getFirstAttendee!: () => Email;
-
-  get email(): string {
-    const attendeeOne: Email = this.getFirstAttendee();
-    return attendeeOne.email;
+  mounted() {
+    const email = this.$store.state.user?.email || '';
   }
 }
 </script>

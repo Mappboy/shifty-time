@@ -21,7 +21,7 @@ import { Component, Vue } from 'nuxt-property-decorator';
   computed: {
     email: {
       get(): string {
-        return this.$store.state.user?.email || '';
+        return this.$store.state.user.email || '';
       },
       set(value): void {
         return this.$store.commit('setUserEmail', value);
