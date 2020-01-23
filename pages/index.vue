@@ -8,23 +8,21 @@
       <h2 class="subtitle">
         Helping shifty people find time together
       </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Let's go
-        </a>
-      </div>
+      <email-input />
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from '~/components/Logo.vue';
+import EmailInput from '~/components/EmailInput.vue';
 
 export default {
   components: {
-    Logo
-  }
-}
+    Logo,
+    EmailInput,
+  },
+};
 </script>
 
 <style>
@@ -38,8 +36,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
