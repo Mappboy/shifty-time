@@ -1,7 +1,14 @@
 import { Store } from 'vuex';
-import { initialiseStores } from '~/utils/store-accessor';
+import { extractVuexModule, createProxy } from 'vuex-class-component';
+import shiftModule from '~/store/shift';
 
-const initializer = (store: Store<any>) => initialiseStores(store);
+export const store = new Store({
+  modules: {
+    ...extractVuexModule(shiftModule),
+  },
+});
 
-export const plugins = [initializer];
-export * from '~/utils/store-accessor';
+// Creating proxies.
+export const vxm = {
+  shift: createProxy(store, shiftModule),
+};

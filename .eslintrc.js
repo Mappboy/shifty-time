@@ -23,9 +23,10 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    'nuxt/no-cjs-in-config': 'off'
+    'nuxt/no-cjs-in-config': 'off',
+    'import/no-mutable-exports': 'off'
   },
-  "overrides": [
+  overrides: [
     {
       "files": ["*.js"],
       "rules": {

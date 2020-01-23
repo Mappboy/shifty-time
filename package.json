@@ -31,6 +31,7 @@
     "nano": "^8.1.0",
     "nuxt": "^2.0.0",
     "nuxt-property-decorator": "^2.5.0",
+    "vuex-class-component": "^2.2.1",
     "vuex-module-decorators": "^0.11.0"
   },
   "devDependencies": {
