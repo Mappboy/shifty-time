@@ -1,12 +1,13 @@
 <template>
   <div>
-    <b-form @submit="onSubmit" @reset="onReset">
+    <b-form @submit="onSubmit">
       <b-form-group>
         <b-form-input
-          v-model="email"
+          :value="email"
           type="email"
           class="border-0 text-center"
           placeholder="Enter your email to get started"
+          @input="updateLocalUser($event)"
         ></b-form-input>
       </b-form-group>
       <b-button variant="dark">Let's go</b-button>
@@ -15,26 +16,26 @@
 </template>
 
 <script lang="ts">
-import { Component, Model, Vue } from 'nuxt-property-decorator';
-import { State, Action } from 'vuex-class';
-import { Email } from '~/types/email';
+import { Component, Vue, namespace } from 'nuxt-property-decorator';
+import { User } from '~/types/user';
+const ShiftModule = namespace('shift');
 
 @Component({})
 export default class EmailInput extends Vue {
-  @Model() email!: Email;
-  @State attendees!: Email;
-  @Action('setAttendees') setAttendees!: (email: Email[]) => void;
+  @ShiftModule.State('user') user!: User;
+  @ShiftModule.Getter('getUserEmail') getUserEmail!: string;
+  @ShiftModule.Action('setUser') setUser!: (user: User) => void;
+
+  get email(): string {
+    return this.getUserEmail;
+  }
+  updateLocalUser(evt: any): void {
+    this.setUser({ name: '', email: evt.target.value });
+  }
 
   onSubmit(evt: any): void {
     evt.preventDefault();
-    this.setAttendees([{ email: this.email.email }]);
     this.$router.push('/shiftWelcome');
-  }
-
-  onReset(evt: any): void {
-    evt.preventDefault();
-    // Reset our form values
-    this.email = { email: '' };
   }
 }
 </script>
