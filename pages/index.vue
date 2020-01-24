@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="d-flex flex-column justify-content-center align-items-center text-center container">
     <div>
       <logo />
-      <h1 class="title">
+      <h1 class="d-block display-1 font-weight-bolder title">
         Shifty Time
       </h1>
-      <h2 class="subtitle">
+      <h2 class="display-3 font-weight-lighter subtitle">
         Helping shifty people find time together
       </h2>
       <email-input />
@@ -38,16 +38,11 @@ export default {
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
     Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;

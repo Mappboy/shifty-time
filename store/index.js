@@ -21,7 +21,7 @@ export const mutations = {
 
 export const actions = {
   async getShift({ commit }) {
-    const { data } = await this.$axios.get('/shifts');
+    const { data } = await this.$axios.get('https://localhost:3000/shifts');
     commit('setShift', data);
   },
   async shareLink({ commit, state }) {

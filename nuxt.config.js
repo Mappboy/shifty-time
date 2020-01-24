@@ -33,7 +33,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/vcalendar.js', ssr: false }],
+  plugins: [{ src: '~plugins/vcalendar.js', ssr: false }, '~/plugins/axios'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -54,6 +54,7 @@ module.exports = {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    '@nuxtjs/device',
   ],
   /*
    ** Axios module configuration
