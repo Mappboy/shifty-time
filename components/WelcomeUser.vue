@@ -10,7 +10,18 @@
     <!--    Add a quick picker here -->
     <div>
       <no-ssr>
-        <v-date-picker :value="null" mode="range" color="red" is-dark is-expanded is-inline />
+        <v-date-picker
+          :available-dates="{
+            start: new Date(),
+          }"
+          :value="null"
+          v-model="range"
+          mode="range"
+          color="red"
+          is-dark
+          is-expanded
+          is-inline
+        />
       </no-ssr>
     </div>
     <div class="pt-3">
@@ -20,7 +31,16 @@
 </template>
 
 <script>
+import { addDays } from 'date-fns';
 export default {
+  data() {
+    return {
+      range: {
+        start: new Date(),
+        end: addDays(new Date(), 7),
+      },
+    };
+  },
   computed: {
     name: {
       get() {
@@ -29,6 +49,11 @@ export default {
       set(value) {
         return this.$store.commit('setUserName', value);
       },
+    },
+  },
+  methods: {
+    validateData() {
+      console.log('incomplete');
     },
   },
 };

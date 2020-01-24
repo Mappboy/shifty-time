@@ -11,7 +11,8 @@ export const getters = {
 };
 
 export const mutations = {
-  setAttendees: (state, attendees) => (state.attendees = attendees),
+  addAttendee: (state, attendee) => state.attendees.push(attendee),
+  setAttendees: (state, attendees) => (state.attendees = [...state.attendees, ...attendees]),
   setShift: (state, shift) => (state.shift = shift),
   setUser: (state, user) => (state.user = user),
   setUserEmail: (state, email) => (state.user.email = email),
@@ -22,5 +23,17 @@ export const actions = {
   async getShift({ commit }) {
     const { data } = await this.$axios.get('/shifts');
     commit('setShift', data);
+  },
+  async shareLink({ commit, state }) {
+    const shareData = {
+      title: 'A Shifty Invite',
+      text: 'Your friend wants to hang out with you!',
+      url: `https://${process.env.BASEURL}/shifts/${state.shift.id}`,
+    };
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      alert('Error: ' + err);
+    }
   },
 };

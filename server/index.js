@@ -1,6 +1,7 @@
 const express = require('express');
 const consola = require('consola');
 const { Nuxt, Builder } = require('nuxt');
+const redirectSSL = require('redirect-ssl');
 const app = express();
 const config = require('../nuxt.config.js');
 const shifts = require('./routes/shifts');
@@ -23,6 +24,7 @@ async function start() {
   }
 
   // Give nuxt middleware to express
+  app.use(redirectSSL.create({ redirect: true }));
   app.use(shifts);
   app.use(nuxt.render);
 

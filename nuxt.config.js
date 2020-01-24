@@ -1,4 +1,9 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
+const path = require('path');
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const fs = require('fs');
+
+// eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
   mode: 'universal',
   /*
@@ -64,6 +69,16 @@ module.exports = {
         ['@babel/plugin-proposal-decorators', { legacy: true }],
         ['@babel/plugin-proposal-class-properties', { loose: true }],
       ],
+    },
+  },
+  serverMiddleware: [
+    // Will register redirect-ssl npm package
+    'redirect-ssl',
+  ],
+  server: {
+    https: {
+      key: fs.readFileSync(path.resolve(__dirname, 'server.key')),
+      cert: fs.readFileSync(path.resolve(__dirname, 'server.crt')),
     },
   },
 };
