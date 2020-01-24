@@ -1,3 +1,4 @@
+// eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
   mode: 'universal',
   /*
@@ -27,7 +28,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/vcalendar.js', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -36,8 +37,6 @@ module.exports = {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    // https://typescript.nuxtjs.org/guide/setup.html#installation
-    '@nuxt/typescript-build',
   ],
   /*
    ** Nuxt.js modules
@@ -60,16 +59,11 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
     babel: {
       plugins: [
         ['@babel/plugin-proposal-decorators', { legacy: true }],
         ['@babel/plugin-proposal-class-properties', { loose: true }],
       ],
     },
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    extend(config, ctx) {},
   },
 };

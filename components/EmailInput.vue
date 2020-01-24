@@ -9,30 +9,33 @@
           placeholder="Enter your email to get started"
         ></b-form-input>
       </b-form-group>
-      <b-button variant="dark">Let's go</b-button>
+      <b-button type="submit" variant="dark">Let's go</b-button>
     </b-form>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
-
-@Component({
+<script>
+export default {
   computed: {
     email: {
-      get(): string {
+      get() {
         return this.$store.state.user.email || '';
       },
-      set(value): void {
+      set(value) {
         return this.$store.commit('setUserEmail', value);
       },
     },
   },
-})
-export default class EmailInput extends Vue {
-  onSubmit(evt: any): void {
-    evt.preventDefault();
-    this.$router.push('/shiftWelcome');
-  }
-}
+  mounted() {
+    this.$store.dispatch('getShift').catch((err) => {
+      console.warn(err);
+    });
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault();
+      this.$router.push('/shiftWelcome');
+    },
+  },
+};
 </script>

@@ -1,13 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const express = require('express');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const consola = require('consola');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { Nuxt, Builder } = require('nuxt');
 const app = express();
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const config = require('../nuxt.config.js');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const shifts = require('./routes/shifts');
 
 // Import and Set Nuxt.js options
