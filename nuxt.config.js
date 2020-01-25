@@ -33,7 +33,15 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/vcalendar.js', ssr: false }, '~/plugins/axios'],
+  plugins: [
+    {
+      src: '~plugins/vcalendar',
+      ssr: false,
+    },
+    '~/plugins/axios',
+    '~/plugins/vclipboard',
+    { src: '~/plugins/vuex-persist', ssr: false },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -56,6 +64,9 @@ module.exports = {
     '@nuxtjs/dotenv',
     '@nuxtjs/device',
   ],
+  bootstrapVue: {
+    icons: true, // Install the IconsPlugin (in addition to BootStrapVue plugin
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -81,5 +92,8 @@ module.exports = {
       key: fs.readFileSync(path.resolve(__dirname, 'server.key')),
       cert: fs.readFileSync(path.resolve(__dirname, 'server.crt')),
     },
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://localhost:3000',
   },
 };

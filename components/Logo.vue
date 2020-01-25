@@ -1,8 +1,8 @@
 <template>
-  <img class="NuxtLogo" width="245" height="180" viewBox="0 0 452 342" src="~/assets/shifty.svg" />
+  <b-img class="ShiftyLogo" width="245" height="180" view-box="0 0 452 342" fluid src="~/assets/shifty.svg" />
 </template>
 <style>
-.NuxtLogo {
+.ShiftyLogo {
   animation: 1s appear;
 }
 

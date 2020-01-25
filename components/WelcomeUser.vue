@@ -1,13 +1,17 @@
 <template>
   <div class="d-flex flex-column justify-content-center align-items-center text-center container">
     <div>
-      <p class="display-1 subtitle">
+      <p class="h1 font-weight-lighter subtitle">
         Hello
-        <b-form-input v-model="name" class="subtitle border-0 text-center" placeholder="Enter Your Name"></b-form-input>
+        <b-form-input
+          v-model="name"
+          class="border-0 text-center col-sm display-3 font-weight-lighter"
+          size="lg"
+          placeholder="Enter Your Name"
+        ></b-form-input>
         please select dates for when it's good to hang out
       </p>
     </div>
-    <!--    Add a quick picker here -->
     <div>
       <client-only>
         <v-date-picker
@@ -24,23 +28,15 @@
         />
       </client-only>
     </div>
+    <!--    We should add something below to show availabilities -->
     <div class="pt-3">
-      <b-button variant="dark link" to="inviteUser">Invite</b-button>
+      <b-button @click="inviteUser" variant="dark link">Invite A Friend</b-button>
     </div>
   </div>
 </template>
 
 <script>
-import { addDays } from 'date-fns';
 export default {
-  data() {
-    return {
-      range: {
-        start: new Date(),
-        end: addDays(new Date(), 7),
-      },
-    };
-  },
   computed: {
     name: {
       get() {
@@ -50,9 +46,19 @@ export default {
         return this.$store.commit('setUserName', value);
       },
     },
+    range: {
+      get() {
+        return this.$store.state.shift.dates.range;
+      },
+      set(value) {
+        return this.$store.commit('setDateRange', value);
+      },
+    },
   },
   methods: {
-    validateData() {
+    inviteUser() {
+      this.$store.commit('setDateRange', this.range);
+      this.$router.push('inviteUser');
       console.log('incomplete');
     },
   },
@@ -69,9 +75,5 @@ export default {
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>

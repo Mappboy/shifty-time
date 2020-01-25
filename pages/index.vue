@@ -10,6 +10,7 @@
       </h2>
       <email-input />
     </div>
+    <b-button v-on:click="reset" variant="danger">Reset</b-button>
   </div>
 </template>
 
@@ -21,6 +22,12 @@ export default {
   components: {
     Logo,
     EmailInput,
+  },
+  methods: {
+    reset(evt) {
+      evt.preventDefault();
+      this.$store.dispatch('resetVuexState');
+    },
   },
 };
 </script>
