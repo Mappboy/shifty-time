@@ -42,6 +42,7 @@ export const getters = {
       end: parseISO(state.shift.dates.range.end),
     });
   },
+  getStartDate: (state) => parseISO(state.shift.dates.range.start),
 };
 
 export const mutations = {

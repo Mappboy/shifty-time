@@ -35,7 +35,7 @@ module.exports = {
    */
   plugins: [
     {
-      src: '~plugins/vcalendar',
+      src: '~/plugins/vcalendar',
       ssr: false,
     },
     '~/plugins/axios',
@@ -75,14 +75,7 @@ module.exports = {
   /*
    ** Build configuration
    */
-  build: {
-    babel: {
-      plugins: [
-        ['@babel/plugin-proposal-decorators', { legacy: true }],
-        ['@babel/plugin-proposal-class-properties', { loose: true }],
-      ],
-    },
-  },
+  build: {},
   serverMiddleware: [
     // Will register redirect-ssl npm package
     'redirect-ssl',

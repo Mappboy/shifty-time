@@ -94,7 +94,7 @@ export default {
       evt.preventDefault();
       this.$store.dispatch('addAttendee', { name: '', googleCalAvailable: false, email: this.currentAttendee });
       this.$store.dispatch('runFreeBusy');
-      this.$router.push('ShowAvailability');
+      this.$router.push('show-availability');
     },
   },
 };

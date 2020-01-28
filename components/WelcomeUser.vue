@@ -58,7 +58,7 @@ export default {
   methods: {
     inviteUser() {
       this.$store.commit('setDateRange', this.range);
-      this.$router.push('inviteUser');
+      this.$router.push('invite-user');
       console.log('incomplete');
     },
   },

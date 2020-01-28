@@ -34,7 +34,7 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      this.$router.push('/shiftWelcome');
+      this.$router.push('/shift-welcome');
     },
   },
 };
